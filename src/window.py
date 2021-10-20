@@ -25,11 +25,13 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
 
     main = Gtk.Template.Child()
     overlay = Gtk.Template.Child()
+    headerbox = Gtk.Template.Child()
+    hdr_menu = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.css_provider = self.load_css()
-        self.set_title("Test")
+        self.set_title("Gtk4 Styler")
         btn = Gtk.Button()
         btn.props.label = "Toggle Overlay"
         btn.props.valign = Gtk.Align.START
@@ -47,6 +49,14 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         btn.props.hexpand = True
         btn.connect('clicked', self.on_button_clicked)
         self.overlay.append(btn)
+        # label = Gtk.Label()
+        # label.set_text("Hallo")
+        # self.headerbox.append(label)
+        builder = Gtk.Builder()
+        builder.add_from_resource(resource_path='/dk/rasmil/Gtk4Styler/ui/mainmenu.ui')
+        menu = builder.get_object('app_menu')
+        print(type(menu))
+        self.hdr_menu.set_menu_model(menu)        
         self.add_custom_styling(self)
 
     def on_button_clicked(self, widget):

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkPopoverMenu" id="main_menu">
+    <property name="can-focus">False</property>
+    <child>
+      <placeholder/>
+    </child>
+  </object>
+  <object class="GtkApplicationWindow">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkBox" id="content">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="show-close-button">True</property>
+        <child>
+          <object class="GtkBox" id="hdr_box">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkMenuButton" id="hdr_menu">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <property name="direction">none</property>
+                <property name="popover">main_menu</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="stock">gtk-justify-fill</property>
+                    <property name="icon_size">1</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

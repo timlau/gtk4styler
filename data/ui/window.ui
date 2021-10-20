@@ -12,7 +12,13 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <child>
-              <placeholder />
+              <object class="GtkMenuButton" id="hdr_menu">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="focus-on-click">False</property>
+                <property name="receives-default">True</property>
+                <property name="direction">none</property>
+              </object>
             </child>
           </object>
         </child>
