@@ -22,6 +22,9 @@
             </child>
           </object>
         </child>
+        <style>
+          <class name="hdrbar"/>
+        </style>
       </object>
     </child>
     <child>

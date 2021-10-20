@@ -1,6 +1,49 @@
 window {
     background-color: teal;
 }
+/* window title */
+.hdrbar .title {
+    color: palevioletred;
+}
+
+
+/* headerbar menubutton */
+.hdrbar .toggle {
+    background: teal;
+    color: white;
+}
+
+.hdrbar .toggle:checked{
+    background: burlywood;
+    color: teal;
+}
+
+.hdrbar .toggle:hover{
+    background: blueviolet;
+    color: white;
+}
+
+/* popover menu */
+.hdrbar contents, .hdrbar popover arrow {
+    background: burlywood;
+    color: teal;
+}
+
+.hdrbar contents modelbutton:hover {
+    background: purple;
+    color: white;
+}
+
+/* window buttons */
+.hdrbar .end button {
+  color: palevioletred;
+}
+
+.hdrbar .end button:hover {
+    background-color: blueviolet;
+    border-color: blueviolet;
+    color: white;
+}
 
 .overlay {
     background-color: burlywood;
@@ -40,7 +83,7 @@ window {
 }
 
 .overlay button:hover {
-    animation: show_shadow 1s ease-in-out infinite;
+    animation: show_shadow 1s linear infinite;
 }
 
 @keyframes show_shadow {

@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os.path
-from gi.repository import Gtk, GLib
+from gi.repository import Gtk, GLib, Gio
 
 
 @Gtk.Template(resource_path='/dk/rasmil/Gtk4Styler/ui/window.ui')
@@ -31,7 +31,7 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.css_provider = self.load_css()
-        self.set_title("Gtk4 Styler")
+        self.set_title("Gtk4 - Colormania")
         btn = Gtk.Button()
         btn.props.label = "Toggle Overlay"
         btn.props.valign = Gtk.Align.START
@@ -54,10 +54,14 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         # self.headerbox.append(label)
         builder = Gtk.Builder()
         builder.add_from_resource(resource_path='/dk/rasmil/Gtk4Styler/ui/mainmenu.ui')
-        menu = builder.get_object('app_menu')
-        print(type(menu))
+        menu = builder.get_object('app-menu')
         self.hdr_menu.set_menu_model(menu)        
         self.add_custom_styling(self)
+        self.create_action('new', self.menu_handler)
+        self.create_action('about', self.menu_handler)
+        self.create_action('quit', self.menu_handler)
+        self.create_action('shortcuts', self.menu_handler)
+
 
     def on_button_clicked(self, widget):
         label = widget.get_label()
@@ -66,7 +70,15 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
             visible = self.overlay.get_visible()
             self.overlay.set_visible(not visible)
 
-
+    def menu_handler(self, action, state):
+        """ Callback for  menu actions"""
+        name = action.get_name()
+        print(f'active : {name}')
+        if name == 'quit':
+            self.close()
+        elif name == 'shortcuts':
+            self.show_shortcuts()
+            
     def load_css(self):
         """create a provider for custom styling"""
         css_provider = None
@@ -91,3 +103,15 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         # iterate children recursive
         for child in widget:
             self.add_custom_styling(child)                    
+
+    def create_action(self, name, callback):
+        """ Add an Action and connect to a callback """
+        action = Gio.SimpleAction.new(name, None)
+        action.connect("activate", callback)
+        self.add_action(action)
+
+    def show_shortcuts(self):
+        builder = Gtk.Builder.new_from_resource('/dk/rasmil/Gtk4Styler/ui/shortcuts.ui')
+        shortcuts = builder.get_object('shortcuts')
+        shortcuts.set_transient_for(self)
+        shortcuts.present()

@@ -3,6 +3,7 @@
   <gresource prefix="/dk/rasmil/Gtk4Styler">
     <file>ui/window.ui</file>
     <file>ui/mainmenu.ui</file>
+    <file>ui/shortcuts.ui</file>
     <file>css/main.css</file>
   </gresource>
 </gresources>
