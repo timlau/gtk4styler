@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=gtk4styler
+Exec=gtk4styler
+Icon=dk.rasmil.Gtk4Styler
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

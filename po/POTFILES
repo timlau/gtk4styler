@@ -1,0 +1,7 @@
+data/dk.rasmil.Gtk4Styler.desktop.in
+data/dk.rasmil.Gtk4Styler.appdata.xml.in
+data/dk.rasmil.Gtk4Styler.gschema.xml
+src/window.ui
+src/main.py
+src/window.py
+
