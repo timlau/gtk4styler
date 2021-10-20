@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os.path
-from gi.repository import Gtk
+from gi.repository import Gtk, GLib
 
 
 @Gtk.Template(resource_path='/dk/rasmil/Gtk4Styler/ui/window.ui')
@@ -40,7 +40,7 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         self.main.append(btn)
         # setup overlay box
         btn = Gtk.Button()
-        btn.props.label = "Touch Me"
+        btn.props.label = "Touch Me Softly"
         btn.props.valign = Gtk.Align.CENTER
         btn.props.halign = Gtk.Align.CENTER
         btn.props.vexpand = True
