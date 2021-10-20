@@ -1,4 +1,4 @@
-{
+ {
     "app-id" : "dk.rasmil.Gtk4Styler",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
