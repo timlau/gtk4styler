@@ -83,5 +83,8 @@
         </child>
       </object>
     </child>
+    <style>
+      <class name="shortcuts-win" />
+    </style>
   </object>
 </interface>

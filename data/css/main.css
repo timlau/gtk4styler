@@ -1,5 +1,5 @@
-window {
-    background-color: teal;
+.main-win {
+    background-color: darkslategrey;
 }
 /* window title */
 .hdrbar .title {
@@ -44,6 +44,17 @@ window {
     border-color: blueviolet;
     color: white;
 }
+
+.shortcuts-win > box > stack{
+    background-color: darkolivegreen;
+}
+
+.shortcuts-win headerbar {
+    background-color: purple;
+    background-image: linear-gradient(180deg, rgba(242,93,9,1) 0%, rgba(243,255,0,1) 100%);
+    color: white;
+}
+
 
 .overlay {
     background-color: burlywood;

@@ -108,4 +108,5 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
             RESOURCE_PATH + 'ui/shortcuts.ui')
         shortcuts = builder.get_object('shortcuts')
         shortcuts.set_transient_for(self)
+        self.add_custom_styling(shortcuts)
         shortcuts.present()

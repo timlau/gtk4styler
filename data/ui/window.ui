@@ -60,6 +60,8 @@
     <style>
       <class name="main-win" />
     </style>
+
+
   </template>
   
   <menu id='app-menu'>
