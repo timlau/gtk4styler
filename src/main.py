@@ -24,10 +24,11 @@ from gi.repository import Gtk, Gio
 
 from .window import Gtk4stylerWindow
 
+APP_ID = 'dk.rasmil.Gtk4Styler'
 
 class Application(Gtk.Application):
     def __init__(self):
-        super().__init__(application_id='dk.rasmil.Gtk4Styler',
+        super().__init__(application_id=APP_ID,
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
 
     def do_activate(self):
