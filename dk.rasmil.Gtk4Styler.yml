@@ -1,12 +1,12 @@
-app-id: dk.rasmil.Gtk4Styler,
-runtime: org.gnome.Platform,
-runtime-version: 41,
-sdk: org.gnome.Sdk,
-command: gtk4styler,
+app-id: dk.rasmil.Gtk4Styler
+runtime: org.gnome.Platform
+runtime-version: "41"
+sdk: org.gnome.Sdk
+command: gtk4styler
 finish-args:
-    - --share=network,
-    - --share=ipc,
-    - --socket=fallback-x11,
+    - --share=network
+    - --share=ipc
+    - --socket=fallback-x11
     - --socket=wayland
 cleanup:
     - "/include"
@@ -25,4 +25,4 @@ modules:
       buildsystem: meson
       sources:
           - type: git
-            url: file:///home/tim/udv/work/gtk4styler
+            url: file:///home/tim/udv/gtk4styler
