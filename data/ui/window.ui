@@ -33,7 +33,13 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <child>
-              <placeholder />
+              <object class="GtkButton" id="btn_main">
+                <property name="vexpand">True</property>
+                <property name="hexpand">True</property>
+                <property name="label" translatable='yes'>Toggle Overlay</property>
+                <property name="halign">center</property>
+                <property name="valign">start</property>
+              </object> 
             </child>
             <style>
               <class name="main" />
@@ -45,6 +51,13 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <child>
+              <object class="GtkButton" id="btn_overlay">
+                <property name="vexpand">True</property>
+                <property name="hexpand">True</property>
+                <property name="label" translatable='yes'>Touch Me Softly</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+              </object> 
               <placeholder />
             </child>
             <style>

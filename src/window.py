@@ -27,29 +27,16 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
     main = Gtk.Template.Child()
     overlay = Gtk.Template.Child()
     headerbox = Gtk.Template.Child()
-    hdr_menu = Gtk.Template.Child()
-
+    btn_main = Gtk.Template.Child()
+    btn_overlay = Gtk.Template.Child()
+    
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.css_provider = self.load_css()
         self.set_title("Gtk4 - Colormania")
-        btn = Gtk.Button()
-        btn.props.label = "Toggle Overlay"
-        btn.props.valign = Gtk.Align.START
-        btn.props.halign = Gtk.Align.CENTER
-        btn.props.vexpand = True
-        btn.props.hexpand = True
-        btn.connect('clicked', self.on_button_clicked)
-        self.main.append(btn)
-        # setup overlay box
-        btn = Gtk.Button()
-        btn.props.label = "Touch Me Softly"
-        btn.props.valign = Gtk.Align.CENTER
-        btn.props.halign = Gtk.Align.CENTER
-        btn.props.vexpand = True
-        btn.props.hexpand = True
-        btn.connect('clicked', self.on_button_clicked)
-        self.overlay.append(btn)
+        # connect button clicks
+        self.btn_main.connect('clicked', self.on_button_clicked)
+        self.btn_overlay.connect('clicked', self.on_button_clicked)
         self.add_custom_styling(self)
         # Get the shortcuts window and add styling
         shortcut_win = self.get_help_overlay()
