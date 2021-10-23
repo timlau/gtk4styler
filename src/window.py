@@ -51,6 +51,9 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         btn.connect('clicked', self.on_button_clicked)
         self.overlay.append(btn)
         self.add_custom_styling(self)
+        # Get the shortcuts window and add styling
+        shortcut_win = self.get_help_overlay()
+        self.add_custom_styling(shortcut_win)
         self.create_action('new', self.menu_handler)
         self.create_action('about', self.menu_handler)
         self.create_action('quit', self.menu_handler)
