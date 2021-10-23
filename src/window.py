@@ -111,3 +111,4 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         self.add_custom_styling(shortcuts)
         self.set_help_overlay(shortcuts)
         return shortcuts
+
