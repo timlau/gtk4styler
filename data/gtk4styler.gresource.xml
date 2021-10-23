@@ -2,7 +2,7 @@
 <gresources>
   <gresource prefix="/dk/rasmil/Gtk4Styler">
     <file>ui/window.ui</file>
-    <file>ui/shortcuts.ui</file>
+    <file>gtk/help-overlay.ui</file>
     <file>css/main.css</file>
   </gresource>
 </gresources>

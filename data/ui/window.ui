@@ -76,7 +76,7 @@
       </item>
       <item>
         <attribute name='label' translatable='yes'>_Shortcuts</attribute>
-        <attribute name='action'>win.shortcuts</attribute>
+        <attribute name='action'>win.show-help-overlay</attribute>
       </item>
       <item>
         <attribute name='label' translatable='yes'>_Quit</attribute>

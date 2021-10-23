@@ -54,8 +54,6 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         self.create_action('new', self.menu_handler)
         self.create_action('about', self.menu_handler)
         self.create_action('quit', self.menu_handler)
-        self.create_action('shortcuts', self.menu_handler)
-        self.shortcuts = self.setup_shortcuts()
 
     def on_button_clicked(self, widget):
         label = widget.get_label()
@@ -70,8 +68,6 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         print(f'active : {name}')
         if name == 'quit':
             self.close()
-        elif name == 'shortcuts':
-            self.shortcuts.present()
 
     def load_css(self):
         """create a provider for custom styling"""
@@ -103,12 +99,4 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         action = Gio.SimpleAction.new(name, None)
         action.connect("activate", callback)
         self.add_action(action)
-
-    def setup_shortcuts(self):
-        builder = Gtk.Builder.new_from_resource(
-            RESOURCE_PATH + 'ui/shortcuts.ui')
-        shortcuts = builder.get_object('shortcuts')
-        self.add_custom_styling(shortcuts)
-        self.set_help_overlay(shortcuts)
-        return shortcuts
 
