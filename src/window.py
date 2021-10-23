@@ -55,6 +55,7 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         self.create_action('about', self.menu_handler)
         self.create_action('quit', self.menu_handler)
         self.create_action('shortcuts', self.menu_handler)
+        self.shortcuts = self.setup_shortcuts()
 
     def on_button_clicked(self, widget):
         label = widget.get_label()
@@ -103,10 +104,13 @@ class Gtk4stylerWindow(Gtk.ApplicationWindow):
         action.connect("activate", callback)
         self.add_action(action)
 
-    def show_shortcuts(self):
+    def setup_shortcuts(self):
         builder = Gtk.Builder.new_from_resource(
             RESOURCE_PATH + 'ui/shortcuts.ui')
         shortcuts = builder.get_object('shortcuts')
-        shortcuts.set_transient_for(self)
         self.add_custom_styling(shortcuts)
-        shortcuts.present()
+        self.set_help_overlay(shortcuts)
+        return shortcuts
+
+    def show_shortcuts(self):
+        self.shortcuts.present()
